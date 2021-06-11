@@ -1,8 +1,8 @@
-# Watchlist
+# Pitch
 ## Author
 Nicholas Ngetich
 ## Description
-
+This a flask application where users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
 ![alt text]()
 ### Prerequisites
 You need to have git installed
