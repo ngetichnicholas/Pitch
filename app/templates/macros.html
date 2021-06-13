@@ -1,22 +1,24 @@
 {% macro display(piches) %}
-{% if piches %}
-{% for category in piches %}
-<h5 class="card-header">{{category.title}}</h5>
-<p>{{category.post}}</p>
-<p>Category: {{category.category}}</p>
-<p> Posted by: {{category.user.username}}</p>
-<div class="row">
-  <div class="col-md-4 comment">
-    <span><i class="fas fa-comment"></i> {{category.comment.count()}} <a href="{{url_for('main.comment',pitch_id = category.id)}}">Add Comment</a></span>
+<div class="pitch">
+  {% if piches %}
+  {% for category in piches %}
+  <h5 class="card-header">{{category.title}}</h5>
+  <p>{{category.post}}</p>
+  <p>Category: {{category.category}}</p>
+  <p> Posted by: {{category.user.username}}</p>
+  <div class="row actions">
+    <div class="col-md-4 comment">
+      <span><i class="fas fa-comment"></i> {{category.comment.count()}} <a href="{{url_for('main.comment',pitch_id = category.id)}}">Add Comment</a></span>
+    </div>
+    <div class="col-md-4 upvote">
+      <span class="foot"> <a href="{{url_for('main.like',id = category.id)}}"><i class="fa fa-thumbs-up"></i> Upvotes: {{category.upvote.count()}}</a></span>
+    </div>
+    <div class="col-md-4 downvote">
+      <span class="foot"> <a href="{{url_for('main.dislike',id = category.id)}}"> <i class="fa fa-thumbs-down"></i> Downvotes: {{category.downvote.count()}}</a></span>
+    </div>    
   </div>
-  <div class="col-md-4 upvote">
-    <span class="foot"> <a href="{{url_for('main.like',id = category.id)}}"><i class="fa fa-thumbs-up"></i> Upvotes: {{category.upvote.count()}}</a></span>
-  </div>
-  <div class="col-md-4 downvote">
-    <span class="foot"> <a href="{{url_for('main.dislike',id = category.id)}}"> <i class="fa fa-thumbs-down"></i> Downvotes: {{category.downvote.count()}}</a></span>
-  </div>    
+  {% endfor %}
+  {% endif %}
 </div>
 
-{% endfor %}
-{% endif %}
 {% endmacro %}

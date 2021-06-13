@@ -13,7 +13,8 @@ def index():
     programming = Pitch.query.filter_by(category = 'Programming').all()
     religion = Pitch.query.filter_by(category = 'Religion').all()
     sports = Pitch.query.filter_by(category = 'Sports').all()
-    return render_template('index.html', pitches = pitches, technology = technology,business = business,programming= programming,religion = religion,sports = sports)
+    social = Pitch.query.filter_by(category = 'Social').all()
+    return render_template('index.html', pitches = pitches, technology = technology,business = business,programming= programming,religion = religion,sports = sports,social = social)
 
 @main.route('/create_new', methods = ['POST','GET'])
 @login_required

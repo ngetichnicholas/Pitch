@@ -10,6 +10,9 @@
   cursor: pointer;
 
 }
+.actions {
+  margin-left: 0.3rem;
+}
 .comment {
   background-color: #2a9d8f;
   padding: 0.5rem;
@@ -24,4 +27,7 @@
 }
 span a {
   color: white;
+}
+.pitch {
+  width: 80%;
 }
