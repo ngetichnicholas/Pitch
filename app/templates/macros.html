@@ -2,10 +2,10 @@
 <div class="pitch">
   {% if piches %}
   {% for category in piches %}
-  <h5 class="card-header">{{category.title}}</h5>
+  <h3 class="title">{{category.title}}</h3>
   <p>{{category.post}}</p>
   <p>Category: {{category.category}}</p>
-  <p> Posted by: {{category.user.username}}</p>
+  <p> Posted by: <span class="user">{{category.user.username}}</span></p>
   <div class="row actions">
     <div class="col-md-4 comment">
       <span><i class="fas fa-comment"></i> {{category.comment.count()}} <a href="{{url_for('main.comment',pitch_id = category.id)}}">Add Comment</a></span>
