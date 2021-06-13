@@ -45,7 +45,6 @@ def comment(pitch_id):
         return redirect(url_for('.comment', pitch_id = pitch_id))
     return render_template('comment.html', form =form, pitch = pitch,all_comments=all_comments)
 
-
 @main.route('/user/<name>')
 def profile(name):
     user = User.query.filter_by(username = name).first()
@@ -68,7 +67,6 @@ def updateprofile(name):
         user.save_u()
         return redirect(url_for('.profile',name = name))
     return render_template('profile/update.html',form =form)
-
 
 @main.route('/user/<name>/update/pic',methods= ['POST'])
 @login_required
@@ -112,3 +110,4 @@ def dislike(id):
     new_downvote = Downvote(user = current_user, pitch_id=id)
     new_downvote.save()
     return redirect(url_for('main.index',id = id))
+
