@@ -4,7 +4,11 @@ from datetime import datetime
 from flask_login import UserMixin,current_user
 from werkzeug.security import generate_password_hash,check_password_hash
 
-class User(UserMixin,db,Model):
+@login_manager.user_loader
+def load_user(user_id):
+  return User.query.get(user_id)
+
+class User(UserMixin,db.Model):
   __tablename__ = 'users'
   id = db.Column(db.Integer, primary_key = True)
   username = db.Column(db.String(255),unique = True,nullable = False)
@@ -115,6 +119,3 @@ class Downvote(db.Model):
   def __repr__(self):
     return f'{self.user_id}:{self.pitch_id}'
 
-@login_manager.user_loader
-def load_user(user_id):
-  return User.query.get(user_id)
