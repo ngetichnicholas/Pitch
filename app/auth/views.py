@@ -31,4 +31,4 @@ def signup():
     user.save_u()
     mail_message("Welcome to Pitch-World","email/welcome_user",user.email,user=user)
     return redirect(url_for('auth.login'))
-  return render_template('auth/signup.html', r_form = form)
+  return render_template('auth/rejister.html', r_form = form)
