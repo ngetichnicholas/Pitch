@@ -59,13 +59,11 @@
           <a style='margin-right:30px' class="nav-link" href="{{url_for('auth.signup')}}"><i
               class="fas fa-user-plus"></i></i>&nbsp; <strong>Sign Up</strong></a>
         </li>
-        {%endif%}
-        </li>
         <li>
-          {% if current_user.is_authenticated %}
           <img src="{{url_for('static',filename=current_user.profile_pic_path)}}" style="height:300px;border-radius: 1%"
             class="card-img icon">
-          {%endif%}
+        </li>
+        {%endif%}
         </li>
       </ul>
     </div><!-- /.navbar-collapse -->
