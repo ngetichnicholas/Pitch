@@ -30,6 +30,13 @@ h2 {
 .dropdown a:hover ,.user:hover {
   cursor: pointer;
 }
+.card-img img {
+  border-radius: 50% !important;
+}
+hr {
+  background-color: #78290f !important;
+  height: 3px;
+}
 footer {
   color: white !important;
 }

@@ -20,13 +20,19 @@
             class="card-img" alt="woman avatar">
           {%else%}
           <p>No profile picture</p>
+          <div id="imgform">
+            <form action="{{url_for('main.update_pic',name=user.username)}}" method="post"
+              enctype="multipart/form-data">
+              <input type="file" name="photo" class="form-control" required>
+              <input type="submit" class="btn btn-sm btn-info" id="submit">
+            </form>
+          </div>
 
           {% endif %}
         </div>
 
         <div class="card-body">
-          <h5 class="text-center"> {{user.username| capitalize}}</h5>
-          <hr>
+          <h5> {{user.username| capitalize}}</h5> 
           {% if user.bio %}
           <p><i class="fas fa-quote-left"></i> {{user.bio}}</p>
           {%else%}
@@ -35,16 +41,7 @@
           {% if user == current_user %}
           <div class="profpic">
             <div id="updates">
-              <a href="{{url_for('main.updateprofile',name=user.username)}}">Edit Bio</a>
-              <button class="btn btn-sm btn-info" id="profbutton">update pic</button>
-            </div>
-
-            <div id="imgform">
-              <form action="{{url_for('main.update_pic',name=user.username)}}" method="post"
-                enctype="multipart/form-data">
-                <input type="file" name="photo" class="form-control" required>
-                <input type="submit" class="btn btn-sm btn-info" id="submit">
-              </form>
+              <a href="{{url_for('main.updateprofile',name=user.username)}} " class="btn btn-primary">Edit Bio</a>
             </div>
           </div>
           {% endif %}
@@ -54,13 +51,14 @@
     <div class="col-md-1"></div>
     <div class="col-md-5" id="user">
       {% if current_user %}
-      <h3 class="text-center">You have {{user.pitches.count()}} Pitches</h3>
+      <h3>You have {{user.pitches.count()}} Pitches</h3>
       {% for i in posts%}
-      <div class="pitches">
-        <h5>Title: {{i.title}}</h5>
+      <div class="card pitches">
+        <h4>Title: {{i.title}}</h4>
         <h6>{{i.post}}</h6>
         <p>{{i.comment.count()}} Comments</p>
       </div>
+      <hr>
 
       {%endfor%}
       {%else%}
