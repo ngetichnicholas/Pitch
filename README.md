@@ -19,10 +19,6 @@ To access this project on your local files, you can clone it using these steps
 1. Use this command to clone $ git clone https://github.com/ngetichnicholas/Pitch.git
 1. This will clone the repositoty into your local folder
 *****
-### Running the Application
-Change the working directory to the cloned project folder and enter the following commands:
-> $ chmod +x run.py
-> $ ./start.sh
 ### Live Link
 Or you can access the web application directly via this [LIVE LINK]().
 ******
