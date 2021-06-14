@@ -64,3 +64,10 @@ span a {
 .pitch {
   width: 80%;
 }
+#sign {
+  color: #ff7d00 !important;
+}
+#create-acc {
+  background-color: green;
+  color: #ff7d00;
+}

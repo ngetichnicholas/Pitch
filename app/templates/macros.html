@@ -8,7 +8,7 @@
   <p> Posted by: <span class="user">{{category.user.username}}</span></p>
   <div class="row actions">
     <div class="col-md-4 comment">
-      <span><i class="fas fa-comment"></i> {{category.comment.count()}} <a href="{{url_for('main.comment',pitch_id = category.id)}}">Add Comment</a></span>
+      <span>{{category.comment.count()}} <i class="fas fa-comment"></i> <a href="{{url_for('main.comment',pitch_id = category.id)}}">Add Comment</a></span>
     </div>
     <div class="col-md-4 upvote">
       <span class="foot"> <a href="{{url_for('main.like',id = category.id)}}"><i class="fa fa-thumbs-up"></i> Upvotes: {{category.upvote.count()}}</a></span>
