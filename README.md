@@ -13,7 +13,7 @@ This web app allows a user to view different pitc categories, create new pitch i
 * You need to have git installed. You can install it with the following command in your terminal
 `$ sudo apt install git-all`
 *****
-## Setup Insttruction
+## Setup Instruction
 To access this project on your local files, you can clone it using these steps
 1. Open your terminal
 1. Use this command to clone $ git clone https://github.com/ngetichnicholas/Pitch.git
