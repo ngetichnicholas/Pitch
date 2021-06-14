@@ -14,13 +14,13 @@
 
     {% if all_comments %}
     <div class="col-md-7">
-      <h3 class="text-center" id="coms">All comments for the post</h3>
+      <h3>All comments for the post</h3>
       {% for comment in all_comments %}
       <div class="card w-90 mb-3">
         <div class="card-body">
-          <h5>{{comment.pitch.title}}</h5>
-          <p class="card-title">{{ comment.comment }}</p>
-          <p class="card-text">--- {{comment.user.username}}</p>
+          <h4>{{comment.pitch.title}}</h4>
+          <p class="comment">{{ comment.comment }}</p>
+          <p class="user">By: {{comment.user.username}}</p>
         </div>
       </div>
       {% endfor %}
@@ -33,7 +33,7 @@
   {%else%}
   <div class="card w-90 mb-3">
     <div class="card-body">
-      <p class="card-title">No Comments for this yet for this post. Be the first to comment</p>
+      <p class="card-title">This pitch has no comments. Be the first to comment</p>
     </div>
   </div>
   <div class="col-md-5">

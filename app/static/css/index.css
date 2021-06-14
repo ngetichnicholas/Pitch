@@ -8,7 +8,8 @@ body {
 }
 nav {
   background-color: #15616d !important;
-  color: white !important;
+  height: 8vh !important;
+  padding-top: 1vh !important;
 }
 a {
   color: white !important;
@@ -39,6 +40,7 @@ hr {
 }
 footer {
   color: white !important;
+  margin-top: 3rem !important;
 }
 .actions {
   margin-left: 0.3rem;
@@ -70,4 +72,9 @@ span a {
 #create-acc {
   background-color: green;
   color: #ff7d00;
+}
+@media (max-width: 1000px) {
+  nav{
+    height: auto !important;
+  }
 }
