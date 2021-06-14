@@ -5,7 +5,16 @@ Nicholas Ngetich
 ## Description
 This a flask application where users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
 This web app allows a user to view different pitc categories, create new pitch in any category the user wants. The user can sign up for a new account and get a confirmation email. After signing in, the user can comment on different pitches, view their pitches on profile and update bio and profile picture.
-![alt text](https://github.com/ngetichnicholas/Pitch/blob/main/landing.png)
+
+*****
+### Pitches
+![alt text](https://github.com/ngetichnicholas/Pitch/blob/main/app/static/images/pitches.png)
+*****
+### Comments
+![alt text](https://github.com/ngetichnicholas/Pitch/blob/main/app/static/images/comments.png)
+*****
+### Profile
+![alt text](https://github.com/ngetichnicholas/Pitch/blob/main/app/static/images/profile.png)
 *****
 ### Prerequisites
 * Python 3
